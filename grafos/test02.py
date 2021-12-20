@@ -20,7 +20,7 @@ G.add_edge("2","8")
 G.add_edge("4","9")
 
 nx.draw(G, with_labels= True)
-plt.savefig("network8.png")
+plt.savefig("grafos/images/network9.png")
 
 sampler = EmbeddingComposite(DWaveSampler())
 print(dnx.min_vertex_cover(G,sampler))
