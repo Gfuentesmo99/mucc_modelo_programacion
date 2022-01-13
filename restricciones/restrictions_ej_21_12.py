@@ -55,7 +55,7 @@ def execute_quantum(sampler, reads):
 #Funcion que muestra el menu
 def menu():
 	print ("Selecciona una opción")
-	print ("\t1 - Sampler clasico\n\t2 - Dwave sampler\n\t3 -  Qimera sampler\n\t0 - Salir")
+	print ("\t1 - Sampler clasico\n\t2 - Dwave Advantage\n\t3 - Qimera sampler\n\t0 - Salir")
 
 #Solución con ordenador clásico
 def classic_sampler():
