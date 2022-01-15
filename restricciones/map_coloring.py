@@ -10,6 +10,8 @@ import dwave.inspector
 
 
 ########### CONSTANTES ###########
+#True =Quimera , False =Pegasus
+QUIMERA_PEGASUS=True
 #Ponemos las posiciones del nodo para representar el mapa de espana de una manera mas organizada
 node_positions = {"can": (0, 0),
                   "ceu": (2, 0),
@@ -85,19 +87,18 @@ def plot_map(sample):
 ########### Main ###########
 #Segun el teorema de los 4 colores podremos pintar cualquier mapa planar con 4 colores
 one_color_configurations = {(0, 0, 0, 1), (0, 0, 1, 0), (0, 1, 0, 0), (1, 0, 0, 0)}
-#Obtenemos la longitud de los posibles colores
-colours = len(one_color_configurations)
 # Creamos un CSP
 csp = dwavebinarycsp.ConstraintSatisfactionProblem(dwavebinarycsp.BINARY)
 #A cada comunidad autonoma le add los 4 posibles que pueda tener (0,1,2,3) luego se pasaran a colroes
 for ca in ccaa:
-    variables = [ca+"_"+str(i) for i in range(colours)]
+    variables = [ca+"_"+str(i) for i in range(len(one_color_configurations))]
+    print(variables)
     #Y add a las restricciones de que solamente puede tener un color
     csp.add_constraint(one_color_configurations, variables)
 #Para cada pareja de vecinos les asignamos una posible combinacion de colores y add la restriccion
 for neighbour in neighbours:
     ca1, ca2 = neighbour
-    for i in range(colours):
+    for i in range(len(one_color_configurations)):
         variables = [ca1+"_"+str(i), ca2+"_"+str(i)]
         csp.add_constraint(different_colours, variables)
 
@@ -105,17 +106,21 @@ for neighbour in neighbours:
 bqm = dwavebinarycsp.stitch(csp)
 
 
-#Cogemos un sampler en este caso probaremos con Pegasus
-sampler = EmbeddingComposite(DWaveSampler(solver={'topology__type': 'pegasus'}))  
-#Realizamos 100 lecturas
+#Cogemos un sampler en este caso probaremos con Pegasus o Quimera
+if(QUIMERA_PEGASUS):
+    sampler = EmbeddingComposite(DWaveSampler(solver='DW_2000Q_6'))    
+else:
+    sampler = EmbeddingComposite(DWaveSampler(solver={'topology__type': 'pegasus'}))  
 response = sampler.sample(bqm, num_reads=100)    
 sample = response.first.sample
+
+#Realizamos 100 lecturas
+
 #Comprobamos si la de menor energia cumple con nuestras restricciones y si las cumple pintamos
 if not csp.check(sample):          
     print("Failed to color map")
 else:
     print("Problema resuelto, guardando el mapa..")
-    print(response)
     dwave.inspector.show(response)
     plot_map(sample)
 
