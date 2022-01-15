@@ -1,7 +1,6 @@
 import dwavebinarycsp
 from dimod.reference.samplers import ExactSolver
 from dwave.system.samplers import DWaveSampler
-from dwave.system.samplers import DWaveCliqueSampler
 from dwave.system.composites import EmbeddingComposite
 from dimod import BinaryQuadraticModel
 from dwave.system.samplers import LeapHybridBQMSampler
