@@ -1,122 +1,596 @@
 [
     {
-        "architecture": "Quimera",
-        "qpu_time": 35542,
-        "qubits": 326,
-        "num_sols": 2
-    },
-    {
-        "architecture": "Quimera",
-        "qpu_time": 35557,
-        "qubits": 277,
-        "num_sols": 8
-    },
-    {
-        "architecture": "Quimera",
-        "qpu_time": 35520,
-        "qubits": 297,
-        "num_sols": 2
-    },
-    {
-        "architecture": "Quimera",
-        "qpu_time": 35544,
-        "qubits": 304,
-        "num_sols": 10
-    },
-    {
-        "architecture": "Quimera",
-        "qpu_time": 35553,
-        "qubits": 333,
-        "num_sols": 2
-    },
-    {
-        "architecture": "Quimera",
-        "qpu_time": 35365,
-        "qubits": 305,
-        "num_sols": 7
-    },
-    {
-        "architecture": "Quimera",
-        "qpu_time": 35557,
-        "qubits": 292,
-        "num_sols": 1
-    },
-    {
-        "architecture": "Quimera",
-        "qpu_time": 35502,
-        "qubits": 348,
-        "num_sols": 1
-    },
-    {
-        "architecture": "Quimera",
-        "qpu_time": 35578,
-        "qubits": 294,
-        "num_sols": 1
-    },
-    {
-        "architecture": "Quimera",
-        "qpu_time": 35524,
-        "qubits": 317,
-        "num_sols": 2
-    },
-    {
         "architecture": "Pegasus",
-        "qpu_time": 24379,
-        "qubits": 165,
-        "num_sols": 1
-    },
-    {
-        "architecture": "Pegasus",
-        "qpu_time": 21571,
-        "qubits": 137,
-        "num_sols": 2
-    },
-    {
-        "architecture": "Pegasus",
-        "qpu_time": 25866,
-        "qubits": 156,
-        "num_sols": 2
-    },
-    {
-        "architecture": "Pegasus",
-        "qpu_time": 22861,
-        "qubits": 147,
-        "num_sols": 2
-    },
-    {
-        "architecture": "Pegasus",
-        "qpu_time": 20391,
-        "qubits": 135,
-        "num_sols": 2
-    },
-    {
-        "architecture": "Pegasus",
-        "qpu_time": 25568,
-        "qubits": 146,
-        "num_sols": 2
-    },
-    {
-        "architecture": "Pegasus",
-        "qpu_time": 26596,
-        "qubits": 165,
-        "num_sols": 1
-    },
-    {
-        "architecture": "Pegasus",
-        "qpu_time": 22903,
-        "qubits": 143,
+        "qpu_time": 36975,
+        "qubits": 152,
         "num_sols": 4
     },
     {
         "architecture": "Pegasus",
-        "qpu_time": 23278,
+        "qpu_time": 45683,
+        "qubits": 139,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 35287,
+        "qubits": 156,
+        "num_sols": 8
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 47309,
+        "qubits": 161,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 36757,
+        "qubits": 148,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 37431,
+        "qubits": 146,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 37398,
+        "qubits": 142,
+        "num_sols": 7
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 36593,
+        "qubits": 148,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 45511,
+        "qubits": 171,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 37523,
+        "qubits": 180,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 36852,
+        "qubits": 152,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 39757,
+        "qubits": 147,
+        "num_sols": 9
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 41956,
+        "qubits": 139,
+        "num_sols": 6
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 39036,
+        "qubits": 151,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 35740,
+        "qubits": 142,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 35000,
+        "qubits": 149,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 44808,
+        "qubits": 154,
+        "num_sols": 9
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 38804,
+        "qubits": 139,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 38880,
+        "qubits": 147,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 42691,
+        "qubits": 158,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 38154,
+        "qubits": 146,
+        "num_sols": 7
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 36686,
+        "qubits": 136,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 35933,
+        "qubits": 168,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 35070,
+        "qubits": 148,
+        "num_sols": 6
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 39312,
+        "qubits": 158,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 40436,
+        "qubits": 139,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 40209,
+        "qubits": 175,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 42493,
+        "qubits": 160,
+        "num_sols": 6
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 42880,
+        "qubits": 148,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 40206,
+        "qubits": 148,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 39511,
+        "qubits": 155,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 34569,
+        "qubits": 158,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 46936,
+        "qubits": 141,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 44263,
+        "qubits": 159,
+        "num_sols": 7
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 36971,
+        "qubits": 149,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 36688,
         "qubits": 151,
         "num_sols": 5
     },
     {
         "architecture": "Pegasus",
-        "qpu_time": 27287,
-        "qubits": 166,
+        "qpu_time": 41604,
+        "qubits": 168,
         "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 42350,
+        "qubits": 144,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 34839,
+        "qubits": 138,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 37719,
+        "qubits": 146,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 42109,
+        "qubits": 138,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 36420,
+        "qubits": 154,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 32984,
+        "qubits": 140,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 35413,
+        "qubits": 160,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 45584,
+        "qubits": 159,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 37845,
+        "qubits": 158,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 39032,
+        "qubits": 147,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 36208,
+        "qubits": 145,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 50123,
+        "qubits": 151,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 36381,
+        "qubits": 158,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60017,
+        "qubits": 313,
+        "num_sols": 21
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59853,
+        "qubits": 280,
+        "num_sols": 24
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59812,
+        "qubits": 355,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60011,
+        "qubits": 348,
+        "num_sols": 17
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60021,
+        "qubits": 331,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 58901,
+        "qubits": 318,
+        "num_sols": 8
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60042,
+        "qubits": 338,
+        "num_sols": 7
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59783,
+        "qubits": 304,
+        "num_sols": 11
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60001,
+        "qubits": 327,
+        "num_sols": 17
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59980,
+        "qubits": 278,
+        "num_sols": 14
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59855,
+        "qubits": 326,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60014,
+        "qubits": 333,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59825,
+        "qubits": 303,
+        "num_sols": 34
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60007,
+        "qubits": 334,
+        "num_sols": 6
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59817,
+        "qubits": 337,
+        "num_sols": 11
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59936,
+        "qubits": 319,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59855,
+        "qubits": 314,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59943,
+        "qubits": 293,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59772,
+        "qubits": 347,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59982,
+        "qubits": 298,
+        "num_sols": 9
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59846,
+        "qubits": 295,
+        "num_sols": 13
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60013,
+        "qubits": 374,
+        "num_sols": 11
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59942,
+        "qubits": 307,
+        "num_sols": 9
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59997,
+        "qubits": 354,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59906,
+        "qubits": 320,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59859,
+        "qubits": 323,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59818,
+        "qubits": 333,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60042,
+        "qubits": 332,
+        "num_sols": 8
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59878,
+        "qubits": 310,
+        "num_sols": 16
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59893,
+        "qubits": 328,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59959,
+        "qubits": 321,
+        "num_sols": 8
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60025,
+        "qubits": 330,
+        "num_sols": 8
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59962,
+        "qubits": 337,
+        "num_sols": 8
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59958,
+        "qubits": 348,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60024,
+        "qubits": 315,
+        "num_sols": 18
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59960,
+        "qubits": 321,
+        "num_sols": 3
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59947,
+        "qubits": 357,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59272,
+        "qubits": 297,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60002,
+        "qubits": 306,
+        "num_sols": 6
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60012,
+        "qubits": 348,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60006,
+        "qubits": 357,
+        "num_sols": 7
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59986,
+        "qubits": 280,
+        "num_sols": 33
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59990,
+        "qubits": 308,
+        "num_sols": 9
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59829,
+        "qubits": 329,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59836,
+        "qubits": 332,
+        "num_sols": 6
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59915,
+        "qubits": 302,
+        "num_sols": 24
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60029,
+        "qubits": 317,
+        "num_sols": 10
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 59943,
+        "qubits": 287,
+        "num_sols": 16
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 60035,
+        "qubits": 298,
+        "num_sols": 10
     }
 ]

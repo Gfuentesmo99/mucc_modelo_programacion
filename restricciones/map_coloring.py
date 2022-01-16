@@ -12,9 +12,11 @@ from os.path import exists
 
 ########### CONSTANTES ###########
 #True =Quimera , False =Pegasus
-QUIMERA_PEGASUS=False
+QUIMERA_PEGASUS=True
 #Numero de veces a ejecutar
-NUM_EXE=1
+NUM_EXE=50
+#Numero de lecturas
+NUM_READS=200
 #Ponemos las posiciones del nodo para representar el mapa de espana de una manera mas organizada
 node_positions = {"can": (0, 0),
                   "ceu": (2, 0),
@@ -151,7 +153,7 @@ for _ in range(NUM_EXE):
     else:
         sampler = EmbeddingComposite(DWaveSampler(solver={'topology__type': 'pegasus'}))  
     #Realizamos 100 lecturas
-    response = sampler.sample(bqm, num_reads=100)  
+    response = sampler.sample(bqm, num_reads=NUM_READS)  
     #Seleccionamos la de menor energía  
     sample = response.first.sample
     #Comprobamos si la de menor energia cumple con nuestras restricciones y si las cumple pintamos
