@@ -7,11 +7,14 @@ import matplotlib.pyplot as plt
 from dimod import BinaryQuadraticModel
 from dwave.system.samplers import LeapHybridBQMSampler
 import dwave.inspector
-
+import json
+from os.path import exists
 
 ########### CONSTANTES ###########
 #True =Quimera , False =Pegasus
-QUIMERA_PEGASUS=True
+QUIMERA_PEGASUS=False
+#Numero de veces a ejecutar
+NUM_EXE=1
 #Ponemos las posiciones del nodo para representar el mapa de espana de una manera mas organizada
 node_positions = {"can": (0, 0),
                   "ceu": (2, 0),
@@ -64,7 +67,6 @@ def plot_map(sample):
         G.add_node(lone_node)
     #Recorremos la respuesta para coger el color escogido 
     color_labels = [k for k, v in sample.items() if v == 1]
-    # Get color order to match that of the graph nodes
     #Para cada ccaa
     for label in color_labels:
         #Obtenemos su nombre y color escogido
@@ -84,6 +86,45 @@ def plot_map(sample):
     filename = "restricciones/espana_ccaa.png"
     plt.savefig(filename)
 
+#Funcion para guardar los datos de las ejecuciones 
+def write_data(response, total_ok):
+    #Obtenemos la arquitectura
+    if(QUIMERA_PEGASUS):
+        architecture = "Quimera"
+    else:
+        architecture = "Pegasus"
+    #Obtenemos en num qubits fisicos
+    embedding = response.info['embedding_context']['embedding']
+    physical_qubits= sum(len(chain) for chain in embedding.values())
+    #Obtenemos el tiempo de uso de la QPU
+    time=response.info['timing']['qpu_access_time']
+    #Escrbimos el JSON
+    write_JSON(architecture,physical_qubits, time, total_ok)
+
+#Escribimos el JSON
+def write_JSON(architecture, physical_qubits,time, total_ok):
+    #Estructura del JSON
+    problem_data ={
+        "architecture" : architecture,
+        "qpu_time" : int(time),
+        "qubits" : int(physical_qubits),
+        "num_sols" : int(total_ok)
+    }
+    #Si no existe el archivo lo creamos
+    if(not exists("restricciones/data_ccaa.json")):
+        void_list=[]
+        void_list.append(problem_data)
+        with open('restricciones/data_ccaa.json',"w") as f:
+            f.write(json.dumps(void_list, indent=4))
+    #Si existe lo actualizamos con los nuevos datos
+    else:
+        with open('restricciones/data_ccaa.json') as fileread:
+            old_data = json.load(fileread)
+        old_data.append(problem_data)
+        with open('restricciones/data_ccaa.json',"w") as f:
+            f.write(json.dumps(old_data, indent=4))
+
+
 ########### Main ###########
 #Segun el teorema de los 4 colores podremos pintar cualquier mapa planar con 4 colores
 one_color_configurations = {(0, 0, 0, 1), (0, 0, 1, 0), (0, 1, 0, 0), (1, 0, 0, 0)}
@@ -92,7 +133,6 @@ csp = dwavebinarycsp.ConstraintSatisfactionProblem(dwavebinarycsp.BINARY)
 #A cada comunidad autonoma le add los 4 posibles que pueda tener (0,1,2,3) luego se pasaran a colroes
 for ca in ccaa:
     variables = [ca+"_"+str(i) for i in range(len(one_color_configurations))]
-    print(variables)
     #Y add a las restricciones de que solamente puede tener un color
     csp.add_constraint(one_color_configurations, variables)
 #Para cada pareja de vecinos les asignamos una posible combinacion de colores y add la restriccion
@@ -101,28 +141,34 @@ for neighbour in neighbours:
     for i in range(len(one_color_configurations)):
         variables = [ca1+"_"+str(i), ca2+"_"+str(i)]
         csp.add_constraint(different_colours, variables)
-
-#Creamos el BQM a traves del CSP
-bqm = dwavebinarycsp.stitch(csp)
-
-
-#Cogemos un sampler en este caso probaremos con Pegasus o Quimera
-if(QUIMERA_PEGASUS):
-    sampler = EmbeddingComposite(DWaveSampler(solver='DW_2000Q_6'))    
-else:
-    sampler = EmbeddingComposite(DWaveSampler(solver={'topology__type': 'pegasus'}))  
-response = sampler.sample(bqm, num_reads=100)    
-sample = response.first.sample
-
-#Realizamos 100 lecturas
-
-#Comprobamos si la de menor energia cumple con nuestras restricciones y si las cumple pintamos
-if not csp.check(sample):          
-    print("Failed to color map")
-else:
-    print("Problema resuelto, guardando el mapa..")
-    dwave.inspector.show(response)
-    plot_map(sample)
+#Ejecutamos el programa N veces (Para add datos a nuestro archivo JSON)
+for _ in range(NUM_EXE):
+    #Creamos el BQM a traves del CSP
+    bqm = dwavebinarycsp.stitch(csp)
+    #Cogemos un sampler en este caso probaremos con Pegasus o Quimera
+    if(QUIMERA_PEGASUS):
+        sampler = EmbeddingComposite(DWaveSampler(solver='DW_2000Q_6'))    
+    else:
+        sampler = EmbeddingComposite(DWaveSampler(solver={'topology__type': 'pegasus'}))  
+    #Realizamos 100 lecturas
+    response = sampler.sample(bqm, num_reads=100)  
+    #Seleccionamos la de menor energía  
+    sample = response.first.sample
+    #Comprobamos si la de menor energia cumple con nuestras restricciones y si las cumple pintamos
+    if not csp.check(sample):          
+        print("Failed to color map")
+    else:
+        print(response.first.energy)
+        total_ok=0
+        for energy, occurences in response.data(['energy', 'num_occurrences']):
+            if(energy>response.first.energy):
+                break
+            total_ok += occurences
+        print("Ha habido un total de " +str(total_ok)+" soluciones correctas")
+        print("Problema resuelto, guardando el mapa..")
+        dwave.inspector.show(response)
+        write_data(response, total_ok)
+        plot_map(sample)
 
 
 

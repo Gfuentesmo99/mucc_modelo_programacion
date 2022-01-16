@@ -1,0 +1,122 @@
+[
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35542,
+        "qubits": 326,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35557,
+        "qubits": 277,
+        "num_sols": 8
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35520,
+        "qubits": 297,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35544,
+        "qubits": 304,
+        "num_sols": 10
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35553,
+        "qubits": 333,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35365,
+        "qubits": 305,
+        "num_sols": 7
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35557,
+        "qubits": 292,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35502,
+        "qubits": 348,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35578,
+        "qubits": 294,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Quimera",
+        "qpu_time": 35524,
+        "qubits": 317,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 24379,
+        "qubits": 165,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 21571,
+        "qubits": 137,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 25866,
+        "qubits": 156,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 22861,
+        "qubits": 147,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 20391,
+        "qubits": 135,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 25568,
+        "qubits": 146,
+        "num_sols": 2
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 26596,
+        "qubits": 165,
+        "num_sols": 1
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 22903,
+        "qubits": 143,
+        "num_sols": 4
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 23278,
+        "qubits": 151,
+        "num_sols": 5
+    },
+    {
+        "architecture": "Pegasus",
+        "qpu_time": 27287,
+        "qubits": 166,
+        "num_sols": 2
+    }
+]
